@@ -1,7 +1,7 @@
 # Reuniones de Seguimiento 
 
 
-## 05/04/2024 🚀 Inicio de la Aventura 🚀
+## 05/04/2024 🚀 Inicio 🚀
 
 ###  👥Participantes: 
 * Lucía Portillo 
@@ -15,7 +15,7 @@
 
 
 
-## 17/04/2024 🚀 Continúa el Viaje 🚀
+## 17/04/2024 🚀 Continuación 🚀
 ### 👥Participantes: 
 * Lucía Portillo
 * Juan Manuel Tarrago
@@ -31,7 +31,7 @@
 
 
 
-## 19/05/2024 🚀 Continúa el Viaje 🚀
+## 19/05/2024 🚀 Continuación 2.0 🚀
 ### 👥Participantes: 
 * Lucía Portillo
 * Juan Manuel Tarrago
