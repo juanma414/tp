@@ -23,7 +23,79 @@ Funciones principales:
 * Informes y análisis: Ofrece informes y análisis para ayudar a los equipos a mejorar su rendimiento.*
 
 ### Modelo
-https://drive.google.com/file/d/1Miob85r-dn_M9zWg0FZaVY0_oawiB9GY/view?usp=drive_link
+Desde Draw.io con las diferentes versiones --> https://drive.google.com/file/d/1Miob85r-dn_M9zWg0FZaVY0_oawiB9GY/view?usp=drive_link
+
+Versión final del Modelo: 
+```mermaid
+---
+config:
+  layout: elk
+  look: neo
+---
+erDiagram
+	direction LR
+	USERS {
+		number userId PK ""  
+		string userName  ""  
+		string userLastName  ""  
+		string userRol  ""  
+		string userEmail  ""  
+	}
+
+	PROJECT {
+		number projectId PK ""  
+		string projectDescription  ""  
+	}
+
+	USER_PROJECT {
+		number idUser FK ""  
+		number idProject FK ""  
+	}
+
+	SPRINT {
+		number sprintId PK ""  
+		date sprintStartDate  ""  
+		date sprintEndDate  ""  
+		string sprintDescription  ""  
+		int idProject FK ""  
+	}
+
+	ISSUE {
+		number issueId PK ""  
+		string issueDescription  ""  
+		date issueCreateDate  ""  
+		date issueEndDate  ""  
+		string issueStatus  ""  
+		string issuePriority  ""  
+		int idProject FK ""  
+		int idSprint FK ""  
+		int typeIssue FK ""  
+		int issueSupervisor FK ""  
+	}
+
+	COMMENT {
+		number commentId PK ""  
+		date commentCreateDate  ""  
+		string commentDescription  ""  
+		int idIssue FK ""  
+		int idUser FK ""  
+	}
+
+	TYPEISSUE {
+		number typeIssueId PK ""  
+		string typeIssueDescription  ""  
+	}
+
+	USERS||--o{USER_PROJECT:"participates"
+	PROJECT||--o{USER_PROJECT:"includes"
+	PROJECT||--|{SPRINT:"has"
+	PROJECT||--|{ISSUE:"contains"
+	SPRINT||--o{ISSUE:"includes"
+	ISSUE||--o{COMMENT:"has"
+	ISSUE||--||TYPEISSUE:"categorized_as"
+	USERS||--o{ISSUE:"supervises"
+	USERS||--o{COMMENT:"writes"
+```
 
 ## Alcance Funcional 
 
